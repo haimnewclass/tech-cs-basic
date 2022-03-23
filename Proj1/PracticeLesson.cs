@@ -43,7 +43,9 @@ namespace Proj1
         }
         public void Ex_2()
         {
-
+            WorkWithFiles w = new WorkWithFiles();
+            //w.SaveInFile();
+            w.LoadFromCsvFile();
         }
     }
 }
