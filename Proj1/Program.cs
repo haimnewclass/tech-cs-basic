@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Proj1OOO;
 
 namespace Proj1
 {
@@ -10,6 +11,9 @@ namespace Proj1
     {
         static void Main(string[] args)
         {
+
+            PracticeLesson practice = new PracticeLesson();
+            practice.Ex_1();
 
             Bed b1 = new Bed();
             Bed b2 = new Bed();
