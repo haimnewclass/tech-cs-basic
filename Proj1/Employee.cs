@@ -12,11 +12,11 @@ namespace Proj1
         public int Sallary;
         public int WorkId;
 
-        public Employee(int workId)
+        public Employee(int workId,string fileName):base(fileName)
         {
             WorkId = workId;
         }
-        public Employee(int workId,bool hasCar)
+        public Employee(int workId,bool hasCar,string fileName):base(fileName)
         {
             WorkId = workId;
             HasCar = hasCar;

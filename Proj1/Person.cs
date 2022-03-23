@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 //using Proj1OOO;
-
+using System.IO;
 
 namespace Proj1
 {
@@ -17,6 +17,13 @@ namespace Proj1
         public bool merried=false;
         protected DateTime merriedDate;
 
+        public Person(string fileName)
+        {
+            if(File.Exists(fileName))
+            {
+                Load(fileName);
+            }
+        }
 
         public bool Devorce()
         {            
@@ -47,6 +54,19 @@ namespace Proj1
             return ret;
         }
         
+        public void Save(string fileName)
+        {
+            string str = name + "," + id.ToString() + "," + merried.ToString();
+            System.IO.File.WriteAllText(fileName, str);
+        }
 
+        public void Load(string fileName)
+        {
+            string dataFromFile = System.IO.File.ReadAllText(fileName);
+            string[] details = dataFromFile.Split(',');
+            this.name = details[0];
+            this.id = int.Parse(details[1]);
+            this.merried = bool.Parse(details[2]);
+        }
     }
 }

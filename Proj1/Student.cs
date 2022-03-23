@@ -8,6 +8,10 @@ namespace Proj1
 {
     public class Student:Person
     {
+        public Student(string fileName):base(fileName)
+        {
+
+        }
         public string CollageName;
         public string phoneNumber;
         public int YearOfStuding;

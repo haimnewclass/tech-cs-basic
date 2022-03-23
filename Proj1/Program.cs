@@ -14,7 +14,8 @@ namespace Proj1
 
             PracticeLesson practice = new PracticeLesson();
             //practice.Ex_1();
-            practice.Ex_2();
+            //practice.Ex_2();
+            practice.Ex_3();
 
             Bed b1 = new Bed();
             Bed b2 = new Bed();

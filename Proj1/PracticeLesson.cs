@@ -10,9 +10,9 @@ namespace Proj1
     {
         public void Ex_1()
         {
-            Employee emp1 = new Employee(33);
+            Employee emp1 = new Employee(33, "MosheData.csv");
 
-            Employee emp2 = new Employee(339,true);
+            Employee emp2 = new Employee(339, true, "MosheData2.csv");
 
             emp1.id = 121;
             emp1.name = "Moshe";
@@ -20,7 +20,10 @@ namespace Proj1
             emp1.HasCar = true;
             emp1.address = "Zabotinsky";
 
-            Student st1 = new Student()
+            emp1.Save("MosheData.csv");
+
+
+            Student st1 = new Student("AviData.csv")
             {
                 address = "BenGurion",
                 CollageName = "BarIlan",
@@ -30,6 +33,8 @@ namespace Proj1
                 YearOfStuding = 5
             };
 
+            st1.Save("AviData.csv");
+
             DateTime d = DateTime.Today;
 
             st1.CommitMerried(d);
@@ -37,7 +42,10 @@ namespace Proj1
             st1.Devorce();
             st1.Devorce();
 
-            //st1.merriedDate
+            st1.CommitMerried(DateTime.Now);
+
+            st1.Save("AviData.csv");
+            st1.Load("AviData.csv");
 
 
         }
@@ -46,6 +54,18 @@ namespace Proj1
             WorkWithFiles w = new WorkWithFiles();
             //w.SaveInFile();
             w.LoadFromCsvFile();
+        }
+
+        public void Ex_3()
+        {
+            Student s = new Student("klum");
+            Console.WriteLine("Enter Id");
+            s.id = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter Name");
+            s.name = Console.ReadLine();
+
+            s.Save(s.name + "Data.csv");
+
         }
     }
 }
